@@ -1,7 +1,6 @@
 package heap
 
 import (
-	"fmt"
 	"log"
 	"testing"
 )
@@ -36,7 +35,6 @@ func TestInit(t *testing.T) {
 		th.Push(i)
 	}
 	Init(th)
-	fmt.Println("after init", th)
 	for th.Len() > 0 {
 		log.Println(Pop(th))
 	}

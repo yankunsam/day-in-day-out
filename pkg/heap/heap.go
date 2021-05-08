@@ -3,6 +3,9 @@ package heap
 import "sort"
 
 type Interface interface {
+	// Less(), not smaller,比如优先级的高低
+	// Len()
+	// Swap()
 	sort.Interface
 	Push(x interface{})
 	Pop() interface{}
@@ -17,7 +20,7 @@ func Init(h Interface) {
 
 func down(h Interface, i, n int) bool {
 	t := i
-	// for循环内t和i的使用容易出错
+	// for循环内t和i的使用容易出错,循环体内不能混用
 	for {
 		il := 2*t + 1
 		if il >= n || il < 0 {
