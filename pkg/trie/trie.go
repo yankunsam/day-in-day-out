@@ -9,8 +9,8 @@ func Construtor() *Trie {
 	return &Trie{map[rune]*Trie{}, false}
 }
 
-func (this *Trie) Insert(word string) {
-	node := this
+func (tri *Trie) Insert(word string) {
+	node := tri
 	for _, s := range word {
 		if _, ok := node.root[s]; !ok {
 			node.root[s] = &Trie{map[rune]*Trie{}, false}
@@ -20,8 +20,8 @@ func (this *Trie) Insert(word string) {
 	node.isEnd = true
 }
 
-func (this *Trie) Search(word string) bool {
-	node := this
+func (tri *Trie) Search(word string) bool {
+	node := tri
 	for _, s := range word {
 		if _, ok := node.root[s]; !ok {
 			return false
